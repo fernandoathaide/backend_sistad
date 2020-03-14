@@ -15,7 +15,8 @@ addons:
 before_script:
 - sudo su postgres
 - psql -U postgres -c 'CREATE DATABASE ts_api_teste;'
-- psql -U postgres -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';" 
+- psql -U postgres -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';"
+- exit
 - npm i -g sequelize-cli gulp-cli nodemon swagger-ui-express
 - cd server/
 - sequelize db:migrate --env test
