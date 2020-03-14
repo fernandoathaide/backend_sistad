@@ -13,7 +13,8 @@ env:
 addons:
   postgresql: '10.12'
 before_script:
-- psql -U postgres -c CREATE DATABASE ts_api_teste;
+- sudo su postgres
+- psql -U postgres -c 'CREATE DATABASE ts_api_teste;'
 - psql -U postgres -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';" 
 - npm i -g sequelize-cli gulp-cli nodemon swagger-ui-express
 - cd server/
