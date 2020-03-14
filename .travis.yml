@@ -11,10 +11,17 @@ env:
   - NODE_ENV: test
   - TRAVIS: true
 addons:
-  postgresql: '10.12'
+  postgresql: "10"
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
+env:
+  global:
+  - PGPORT=5433
 before_script:
-- sudo psql -U postgres -c 'CREATE DATABASE ts_api_teste;'
-- sudo psql -U postgres -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';"
+- psql -c 'create database ts_api_test;' -U postgres
+- psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';" -U postgres 
 - npm i -g sequelize-cli gulp-cli nodemon swagger-ui-express
 - cd server/
 - sequelize db:migrate --env test
