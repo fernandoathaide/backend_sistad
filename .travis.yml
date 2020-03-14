@@ -5,7 +5,7 @@ notifications:
 node_js:
 - 12.16.1
 services:
-- postgresql
+  - postgresql
 env:
   global:
   - NODE_ENV: test
@@ -14,12 +14,16 @@ addons:
   postgresql: 
     adapter: postgresql
     database: ts_api_test
-    username: postgres    
+    username: postgres
+  apt:
+    packages:
+    - postgresql-10
+    - postgresql-client-10
 env:
   global:
-  - PGPORT=5433
+  - PGPORT=5432
 before_script:
-- psql -c "create database ts_api_test;" -U postgres
+- psql -c 'create database ts_api_test;' -U postgres
 - psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';" -U postgres 
 - npm i -g sequelize-cli gulp-cli nodemon swagger-ui-express
 - cd server/
