@@ -12,6 +12,9 @@ env:
   - TRAVIS: true
 addons:
   postgresql: "10"
+    adapter: postgresql
+    database: ts_api_test
+    username: postgres
   apt:
     packages:
     - postgresql-10
@@ -20,7 +23,7 @@ env:
   global:
   - PGPORT=5433
 before_script:
-- psql -c 'create database ts_api_test;' -U postgres
+- psql -c "create database ts_api_test;" -U postgres
 - psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';" -U postgres 
 - npm i -g sequelize-cli gulp-cli nodemon swagger-ui-express
 - cd server/
