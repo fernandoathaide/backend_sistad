@@ -11,14 +11,10 @@ env:
   - NODE_ENV: test
   - TRAVIS: true
 addons:
-  postgresql: "10"
+  postgresql: 
     adapter: postgresql
     database: ts_api_test
-    username: postgres
-  apt:
-    packages:
-    - postgresql-10
-    - postgresql-client-10
+    username: postgres    
 env:
   global:
   - PGPORT=5433
