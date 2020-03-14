@@ -1,0 +1,25 @@
+sudo: required
+language: node_js
+notifications:
+  email: fernandoathaide@hotmail.com
+node_js:
+- 12.16.1
+services:
+- postgresql
+env:
+  global:
+  - NODE_ENV: test
+  - TRAVIS: true
+addons:
+  postgresql: '10.12'
+before_script:
+- psql -c 'create database ts-api-teste;' -U postgres
+- psql -U postgres -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';" 
+- npm i -g sequelize-cli gulp-cli nodemon swagger-ui-express
+- cd server/
+- sequelize db:migrate --env test
+- npm install
+- gulp
+script:
+- npm run unit-teste
+- npm run integration-teste
