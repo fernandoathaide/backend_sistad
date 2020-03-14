@@ -1,4 +1,6 @@
 # ESTRUTURA DO PROJETO
+[![Build Status](https://travis-ci.com/fernandoathaide/backend_sistad.svg?branch=master)](https://travis-ci.com/fernandoathaide/backend_sistad)
+
     - API Server em NODE JS 
     - Modelo em camadas MVC 
     - SEQUELIZE: Mapeamento Relacional e Migrations - Object Relational Mapper (ORM) para NodeJS baseado em promises que tem como principal objetivo unir a orientação objeto com a parte relacional, onde faz um mapeamento dos tipos de dados relacional gerando o objeto com a mesma representação dos dados.
