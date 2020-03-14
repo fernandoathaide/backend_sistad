@@ -12,16 +12,6 @@ env:
   - TRAVIS: true
 addons:
   postgresql: "9.6"
-    adapter: postgresql
-    database: ts_api_test
-    username: postgres
-  apt:
-    packages:
-    - postgresql-9
-    - postgresql-client-9
-env:
-  global:
-  - PGPORT=5432
 before_script:
 - psql -c 'create database ts_api_test;' -U postgres
 - psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD 'wff@260981N';" -U postgres 
