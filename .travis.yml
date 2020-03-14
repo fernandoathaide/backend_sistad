@@ -19,6 +19,7 @@ before_script:
 - npm install
 - cd server
 - sequelize db:migrate --env test
+- cd ..
 - gulp
 script:
 - npm run unit-teste
