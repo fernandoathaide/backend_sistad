@@ -27,6 +27,7 @@ npm i nodemon -S //Roda a aplicação a cada alteração.
 npm i @types/express @types/body-parser @types/morgan -D //ou --save-dev
 npm i sequelize sequelize-cli -S 
 npm i @types/sequelize -D
+npm install --save pg pg-hstore //Plugin para PostgreSQL
 
 npm install @types/node --save-dev
 
