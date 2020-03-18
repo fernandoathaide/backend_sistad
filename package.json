@@ -5,7 +5,7 @@
   "main": "./server/server.ts",
   "scripts": {
     "start": "PORT=5000 NODE_ENV=development nodemon ./server/server.ts",
-    "builded": "PORT=5000 NODE_ENV=production nodemon ./dist/server/server.js",
+    "builded": "PORT=5000 NODE_ENV=teste nodemon ./build/server/server.js",
     "desenvolvimento": "NODE_ENV=desenvolvimento nodemon ./dist/server/server.js",
     "homologacao": "NODE_ENV=homologacao nodemon ./dist/server/server.js",
     "unit-teste": "NODE_ENV=teste mocha --opts ./dist/tests/unit/config/mocha.opts ./dist/tests/unit/*.js",
